@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hugodev <hugodev@student.42.fr>            +#+  +:+       +#+         #
+#    By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 19:22:40 by hluiz-ma          #+#    #+#              #
-#    Updated: 2024/08/26 21:55:12 by hugodev          ###   ########.fr        #
+#    Updated: 2024/08/27 22:06:13 by hluiz-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,20 +19,20 @@ IFLAGS = -I./include
 RM = rm -rf
 
 # Paths
-LIBFT_DIR = ./Libft
+LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 SRCS_DIR = ./src
 SRCS_BONUS = ./bonus
 
 # Source files
-SRCS = $(SRCS_DIR)/main.c 
+SRCS = $(SRCS_DIR)/main.c \
+		$(SRCS_DIR)/utils.c \
 
 BONUS = $(SRCS_BONUS)/main_bonus.c 
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS:.c=.o)
-# Scripts
-TEST = val.sh
+
 # Default target
 all: $(MLX) $(NAME)
 
