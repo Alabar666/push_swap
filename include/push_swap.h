@@ -6,19 +6,17 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:15:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/08/27 22:05:13 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/08/28 21:09:12 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
 /*
 **                              HEADERS
 */
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include <stddef.h>
 # include <stdlib.h> //malloc,free, exit + rand
 # include <string.h> //strerror
@@ -40,7 +38,7 @@ typedef struct s_track
     int nbr;
     int idx;
     int pcost;    
-    bool cheap;
+    int cheap;
 
     struct s_stack  *next;
     struct s_stack  *prev; 
@@ -52,5 +50,16 @@ typedef struct s_track
 */
 
 
-//
+//erros
 void    ft_error(void);
+int error_syntax(char *str_nbr);
+
+
+//list funcitions
+t_stack	*ft_stack_new(void *content);
+
+//utils
+long	ft_atol(const char *str);
+
+
+#endif

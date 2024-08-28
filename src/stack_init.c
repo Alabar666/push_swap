@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/08/28 20:54:38 by hluiz-ma         ###   ########.fr       */
+/*   Created: 2024/08/27 20:19:45 by hluiz-ma          #+#    #+#             */
+/*   Updated: 2024/08/28 21:11:25 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <climits>
 
-int main(int ac, char **av)
+void stack_init(t_stack **a, char **av)
 {
+    long nbr;
+    int i;
 
-    t_stack *a;
-    t_stack *b; 
-
-    a = NULL;
-    b = NULL;
-    if(ac < 2)
-        ft_error();
-    if (ac == 2 && av[1][0])
+    i = -1;
+    while(av[++i])
     {
-        av = ft_split(av[1], ' ');
-        stack_init(&a, av + 1);
-
+        if(erro_syntax(av[i]))
+            ft_error();
+        nbr = ft_atol(av[i]);
+        if(nbr > INT_MAX || nbr < INT_MIN)
+            ft_error();
+        ft_stack_new(a, (int)nbr);        
+    }
         
-    }  
-
-
-
-    return (0);
 }
-
-
