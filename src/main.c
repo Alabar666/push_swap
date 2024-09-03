@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/08/28 20:54:38 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:10:53 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char **av)
     a = NULL;
     b = NULL;
     if(ac < 2)
-        ft_error();
+        return 0;
     if (ac == 2 && av[1][0])
     {
         av = ft_split(av[1], ' ');

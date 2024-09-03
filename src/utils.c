@@ -6,33 +6,11 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/08/28 21:08:05 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:08:21 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void    ft_error(void)
-{
-    write(2, "Error\n", 6);
-    exit(1);
-}
-int error_syntax(char *str_nbr)
-{
-	if (!(*str_nbr == '+' || *str_nbr == '-'
-			|| (*str_nbr >= '0' && *str_nbr <= '9')))
-		return (1);
-    if ((*str_nbr == '+' || *str_nbr == '-')
-		&& !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
-		return (1);
-	while (*++str_nbr)
-	{
-		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
-			return (1);
-	}
-	return (0);
-}
-
 
 long	ft_atol(const char *str)
 {
@@ -57,4 +35,31 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (num * sing);
+}
+
+void	print_stacks(t_stack *stack1, t_stack *stack2)
+{
+	t_stack	*current1;
+	t_stack	*current2;
+
+	//current1 = stack_first(stack1);
+	//current2 = stack_first(stack2);
+	ft_printf("A ----- B\n");
+	while (current1 || current2)
+	{
+		if (current1)
+		{
+			ft_printf("%i\t", current1->nbr);
+			current1 = current1->next;
+		}
+		else
+			ft_printf("\t");
+		if (current2)
+		{
+			ft_printf("%i\n", current2->nbr);
+			current2 = current2->next;
+		}
+		else
+			ft_printf("\n");
+	}
 }

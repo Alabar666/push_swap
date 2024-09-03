@@ -6,7 +6,7 @@
 #    By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 19:22:40 by hluiz-ma          #+#    #+#              #
-#    Updated: 2024/08/28 20:10:16 by hluiz-ma         ###   ########.fr        #
+#    Updated: 2024/09/03 21:01:57 by hluiz-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = $(SRCS_DIR)/main.c \
 		$(SRCS_DIR)/utils.c \
 		$(SRCS_DIR)/stack_init.c \
 		$(SRCS_DIR)/start_list.c \
+		$(SRCS_DIR)/error_free.c \
 
 BONUS = $(SRCS_BONUS)/main_bonus.c 
 
