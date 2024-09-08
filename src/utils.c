@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/03 21:08:21 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:21:11 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	print_stacks(t_stack *stack1, t_stack *stack2)
 	t_stack	*current1;
 	t_stack	*current2;
 
-	//current1 = stack_first(stack1);
-	//current2 = stack_first(stack2);
+	current1 = stack1;
+	current2 = stack2;
 	ft_printf("A ----- B\n");
 	while (current1 || current2)
 	{

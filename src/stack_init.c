@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:19:45 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/03 21:04:03 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:49:25 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void stack_init(t_stack **a, char **av)
 {
     long nbr;
     int i;
+    t_stack *last;
 
+    last = NULL;
     i = -1;
     while(av[++i])
     {
@@ -27,7 +29,12 @@ void stack_init(t_stack **a, char **av)
             ft_error(a);
         if(error_nbr_repet(*a, (int)nbr))
             ft_error(a);
-       //ft_stack_new(a, (int)nbr);        
+        if (*a == NULL) {
+            *a = stack_new((int)nbr);
+            last = *a;
+        } else {
+            last = stack_new_node(last, (int)nbr);
+        }      
     }
         
 }

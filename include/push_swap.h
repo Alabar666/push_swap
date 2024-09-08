@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:15:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/03 21:06:41 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:36:38 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,20 @@ int error_syntax(char *str_nbr);
 int error_nbr_repet(t_stack *a, int nbr);
 void ft_error(t_stack **a);
 
+//free
+void free_stack(t_stack **stack);
+
 //stack
 void stack_init(t_stack **a, char **av);
 
+
 //list funcitions
+t_stack	*stack_new(int content);
 t_stack	*ft_stack_new(void *content);
+t_stack	*stack_new_node(t_stack *node, int content);
 
 //utils
 long	ft_atol(const char *str);
-
+void	print_stacks(t_stack *stack1, t_stack *stack2);
 
 #endif
