@@ -6,19 +6,19 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:25:11 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/08 17:21:05 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:19:40 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int error_syntax(char *str_nbr)
+int	error_syntax(char *str_nbr)
 {
-	if (!(*str_nbr == '+' || *str_nbr == '-'
-			|| (*str_nbr >= '0' && *str_nbr <= '9')))
+	if (!(*str_nbr == '+' || *str_nbr == '-' || (*str_nbr >= '0'
+				&& *str_nbr <= '9')))
 		return (1);
-    if ((*str_nbr == '+' || *str_nbr == '-')
-		&& !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
+	if ((*str_nbr == '+' || *str_nbr == '-') && !(str_nbr[1] >= '0'
+			&& str_nbr[1] <= '9'))
 		return (1);
 	while (*++str_nbr)
 	{
@@ -27,39 +27,58 @@ int error_syntax(char *str_nbr)
 	}
 	return (0);
 }
-int error_nbr_repet(t_stack *a, int nbr)
+void	free_av(char **av)
 {
-	if(!a)
+	int	i;
+
+	if (!av || !*av)
+		return ;
+	i = 0;
+	while (av[i])
+		free(av[i++]);
+	free(av);
+}
+
+int	error_nbr_repet(t_stack *a, int nbr)
+{
+	if (!a)
 		return (0);
-	while(a)
+	while (a)
 	{
-		if(a->nbr == nbr)
+		if (a->nbr == nbr)
 			return (1);
 		a = a->next;
 	}
 	return (0);
 }
 
-void free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
-    t_stack *tmp;
-    t_stack *current;
+	t_stack	*tmp;
+	t_stack	*current;
 
-    if(!stack)
-        return;
-    current = *stack;
-    while(current)
-    {
-        tmp = current->next;
-        free(current);
-        current = tmp;
-    }
-    *stack = NULL;
+	if (!stack)
+		return ;
+	current = *stack;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*stack = NULL;
 }
 
-void ft_error(t_stack **a)
+void	ft_error(t_stack **a, t_stack **b, char **av, bool split)
 {
-	free_stack(a);
+	if (a)
+		free_stack(a);
+	if (b)
+		free_stack(b);
+	if(split)
+		free_av(av);
 	write(2, "Error\n", 6);
 	exit(1);
 }
+
+
