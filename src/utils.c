@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugodev <hugodev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/09 14:04:12 by hugodev          ###   ########.fr       */
+/*   Updated: 2024/09/11 17:47:15 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atol(const char *str)
 {
-	int	i;
-	int	sing;
+	int		i;
+	int		sing;
 	long	num;
 
 	i = 0;
@@ -36,8 +36,6 @@ long	ft_atol(const char *str)
 	}
 	return (num * sing);
 }
-
-
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)
 {
