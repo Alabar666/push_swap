@@ -6,7 +6,7 @@
 #    By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 19:22:40 by hluiz-ma          #+#    #+#              #
-#    Updated: 2024/09/03 21:01:57 by hluiz-ma         ###   ########.fr        #
+#    Updated: 2024/09/11 20:34:03 by hluiz-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,33 @@ SRCS_BONUS = ./bonus
 SRCS = $(SRCS_DIR)/main.c \
 		$(SRCS_DIR)/utils.c \
 		$(SRCS_DIR)/stack_init.c \
+		$(SRCS_DIR)/stack_utils.c \
 		$(SRCS_DIR)/start_list.c \
 		$(SRCS_DIR)/error_free.c \
-
-BONUS = $(SRCS_BONUS)/main_bonus.c 
+		$(SRCS_DIR)/push.c \
+		$(SRCS_DIR)/swap.c \
+		$(SRCS_DIR)/rotate.c \
+		$(SRCS_DIR)/reverse_rotate.c \
+		$(SRCS_DIR)/sort.c \
+		$(SRCS_DIR)/check_nodes.c \
+		$(SRCS_DIR)/push_swap.c \
+		$(SRCS_DIR)/push_swap_sort.c \
+		
+BONUS = $(SRCS_BONUS)/main_bonus.c \
+		$(SRCS_DIR)/utils.c \
+		$(SRCS_DIR)/stack_init.c \
+		$(SRCS_DIR)/stack_utils.c \
+		$(SRCS_DIR)/start_list.c \
+		$(SRCS_DIR)/error_free.c \
+		$(SRCS_DIR)/push.c \
+		$(SRCS_DIR)/swap.c \
+		$(SRCS_DIR)/rotate.c \
+		$(SRCS_DIR)/reverse_rotate.c \
+		$(SRCS_DIR)/sort.c \
+		$(SRCS_DIR)/check_nodes.c \
+		$(SRCS_DIR)/push_swap.c \
+		$(SRCS_DIR)/push_swap_sort.c \
+		$(SRCS_BONUS)/checker.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS:.c=.o)
