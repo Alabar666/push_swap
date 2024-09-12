@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:48:56 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/11 20:26:10 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:04:04 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,24 @@ void	sort_five(t_stack **a, t_stack **b)
 		finish_rotation(a, find_small(*a), 'a');
 		pb(b, a, false);
 	}
+}
+
+void sort_all(t_stack **a, t_stack **b)
+{
+    int len;
+    
+    len = stack_len(*a);
+	if(len-- > 3 && !is_sorted(*a))
+		pb(b, a, false);
+	if(len-- > 3 && !is_sorted(*a))
+		pb(b, a, false);			
+	if(len > 3 && !is_sorted(*a))
+          move_b(a, b);
+    sort_three(a);
+    while(*b)
+    {
+        check_nodes(*a, *b);
+        move_nodes(a, b);        
+    } 
+    set_position(*a);
 }

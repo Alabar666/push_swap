@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/11 17:47:15 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:16:47 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,34 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (num * sing);
+}
+
+long nbr_min(t_stack *a)
+{
+	long min_nbr;
+
+	min_nbr = a->nbr;
+	while(a->next)
+	{
+		if (a->next->nbr < min_nbr)
+			min_nbr = a->next->nbr;
+		a = a->next;
+	}
+	return(min_nbr);
+}
+
+long nbr_max(t_stack *a)
+{
+	long max_nbr;
+
+	max_nbr = a->nbr;
+	while(a->next)
+	{
+		if (a->next->nbr > max_nbr)
+			max_nbr = a->next->nbr;
+		a = a->next;
+	}
+	return(max_nbr);
 }
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)
