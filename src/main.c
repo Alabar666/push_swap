@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/11 20:37:43 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:33:14 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,15 @@ int	main(int ac, char **av)
 	{
 		stack_init(&a, av + 1, false);
 	}
-    	print_stacks(a, b);
     if(!is_sorted(a))
     {
         if(stack_len(a) == 2)
             sa(&a, false);
         else if (stack_len(a) == 3)
-            sort_three(&a);
+            sort_three(&a);	
         else
             push_swap(&a, &b);
     }
-	print_stacks(a, b);
-
     if(ac == 2)
     {
         free_av(av);
