@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:15:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/11 20:35:06 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:00:18 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,10 @@ void	sort_three(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
 void push_swap(t_stack **a, t_stack **b);
 void	finish_rotation(t_stack **stack, t_stack *top_node, char flag);
+void	move_nodes(t_stack **a, t_stack **b);
+void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheap);
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheap);
+void sort_all(t_stack **a, t_stack **b);
 
 //checks
 void    check_nodes(t_stack *a, t_stack *b);
@@ -100,6 +104,10 @@ void    set_small(t_stack *b);
 void    set_cost(t_stack *a, t_stack *b);
 void    set_target(t_stack *a, t_stack *b);
 void	set_position(t_stack *stack);
+int check_above(t_stack *stack, int target);
+void check_before_push(t_stack **a, t_stack **b, int target);
+t_stack	*find_above(t_stack *stack, int target);
+void	move_b(t_stack **a, t_stack **b);
 
 // list funcitions
 t_stack				*stack_new(int content);
@@ -109,6 +117,8 @@ t_stack				*stack_new_node(t_stack *node, int content);
 // utils
 long				ft_atol(const char *str);
 void				print_stacks(t_stack *stack1, t_stack *stack2);
+long nbr_max(t_stack *a);
+long nbr_min(t_stack *a);
 
 // bonus
 void				fd_command(t_stack **a, t_stack **b, char *command);
