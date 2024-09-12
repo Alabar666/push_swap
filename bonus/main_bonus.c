@@ -27,11 +27,11 @@ int	main(int ac, char **av)
 		av = ft_split(av[1], ' ');
 		if (av == NULL)
 			return (1);
-		stack_init(&a, av);
+		stack_init(&a, av, true);
 	}
 	else
 	{
-		stack_init(&a, av + 1);
+		stack_init(&a, av + 1, false);
 	}
 	print_stacks(a, NULL);
 	while (1)
