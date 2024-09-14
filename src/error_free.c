@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hugodev <hugodev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:25:11 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/11 19:19:40 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/14 11:49:51 by hugodev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	error_syntax(char *str_nbr)
 	}
 	return (0);
 }
+
 void	free_av(char **av)
 {
 	int	i;
@@ -75,10 +76,8 @@ void	ft_error(t_stack **a, t_stack **b, char **av, bool split)
 		free_stack(a);
 	if (b)
 		free_stack(b);
-	if(split)
+	if (split)
 		free_av(av);
 	write(2, "Error\n", 6);
 	exit(1);
 }
-
-

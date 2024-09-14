@@ -37,32 +37,32 @@ long	ft_atol(const char *str)
 	return (num * sing);
 }
 
-long nbr_min(t_stack *a)
+long	nbr_min(t_stack *a)
 {
-	long min_nbr;
+	long	min_nbr;
 
 	min_nbr = a->nbr;
-	while(a->next)
+	while (a->next)
 	{
 		if (a->next->nbr < min_nbr)
 			min_nbr = a->next->nbr;
 		a = a->next;
 	}
-	return(min_nbr);
+	return (min_nbr);
 }
 
-long nbr_max(t_stack *a)
+long	nbr_max(t_stack *a)
 {
-	long max_nbr;
+	long	max_nbr;
 
 	max_nbr = a->nbr;
-	while(a->next)
+	while (a->next)
 	{
 		if (a->next->nbr > max_nbr)
 			max_nbr = a->next->nbr;
 		a = a->next;
 	}
-	return(max_nbr);
+	return (max_nbr);
 }
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)

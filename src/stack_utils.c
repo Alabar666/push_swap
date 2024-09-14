@@ -72,5 +72,3 @@ t_stack	*return_cheap(t_stack *stack)
 	}
 	return (0);
 }
-
-
