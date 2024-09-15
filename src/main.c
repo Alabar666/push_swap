@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/15 16:20:51 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:32:35 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	init_stacks(int ac, char **av, t_stack **a, char ***split_av)
 	*split_av = NULL;
 	if (ac < 2)
 		return (1);
-	if (!(error_syntax(av[1])) || (ac == 2 && !av[1][0]))
+	if ((ac == 2 && !av[1][0]))
 	{
 		ft_printf("Error\n");
 		return (1);

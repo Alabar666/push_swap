@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:25:11 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/15 16:21:38 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:33:23 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 int	error_syntax(char *str_nbr)
 {
-	int	i;
-
 	if (!(*str_nbr == '+' || *str_nbr == '-' || (*str_nbr >= '0'
 				&& *str_nbr <= '9')))
 		return (1);
 	if ((*str_nbr == '+' || *str_nbr == '-') && !(str_nbr[1] >= '0'
 			&& str_nbr[1] <= '9'))
 		return (1);
-	i = -1;
-	while (str_nbr[++i])
+	while (*++str_nbr)
 	{
-		if (!(str_nbr[i] >= '0' && str_nbr[i] <= '9'))
+		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
 			return (1);
 	}
 	return (0);
