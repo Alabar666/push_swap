@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:31:27 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/12 14:16:47 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:18:37 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,22 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (num * sing);
+}
+
+bool	is_empty_split(char **split_av)
+{
+	int	i;
+
+	if (!split_av)
+		return (true);
+	i = 0;
+	while (split_av[i])
+	{
+		if (split_av[i][0] != '\0')
+			return (false);
+		i++;
+	}
+	return (true);
 }
 
 long	nbr_min(t_stack *a)

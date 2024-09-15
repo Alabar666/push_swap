@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugodev <hugodev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:25:11 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/14 11:49:51 by hugodev          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:21:38 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 int	error_syntax(char *str_nbr)
 {
+	int	i;
+
 	if (!(*str_nbr == '+' || *str_nbr == '-' || (*str_nbr >= '0'
 				&& *str_nbr <= '9')))
 		return (1);
 	if ((*str_nbr == '+' || *str_nbr == '-') && !(str_nbr[1] >= '0'
 			&& str_nbr[1] <= '9'))
 		return (1);
-	while (*++str_nbr)
+	i = -1;
+	while (str_nbr[++i])
 	{
-		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
+		if (!(str_nbr[i] >= '0' && str_nbr[i] <= '9'))
 			return (1);
 	}
 	return (0);
@@ -32,7 +35,7 @@ void	free_av(char **av)
 {
 	int	i;
 
-	if (!av || !*av)
+	if (!av)
 		return ;
 	i = 0;
 	while (av[i])

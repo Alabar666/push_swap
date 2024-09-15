@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugodev <hugodev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:15:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/09/14 22:51:05 by hugodev          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:22:24 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_stack
 int					error_syntax(char *str_nbr);
 int					error_nbr_repet(t_stack *a, int nbr);
 void				ft_error(t_stack **a, t_stack **b, char **av, bool split);
+bool				is_empty_split(char **split_av);
 
 // free
 void				free_stack(t_stack **stack);
