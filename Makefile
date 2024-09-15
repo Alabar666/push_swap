@@ -6,13 +6,13 @@
 #    By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 19:22:40 by hluiz-ma          #+#    #+#              #
-#    Updated: 2024/09/11 20:34:03 by hluiz-ma         ###   ########.fr        #
+#    Updated: 2024/09/15 18:22:59 by hluiz-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Project settings
 NAME = push_swap
-B_NAME = bonus_push_swap
+B_NAME = checker
 CC = cc #-fsanitize=address
 CFLAGS = -Wall -Wextra -Werror -g
 IFLAGS = -I./include 
